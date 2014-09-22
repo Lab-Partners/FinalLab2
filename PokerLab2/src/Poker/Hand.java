@@ -28,6 +28,7 @@ public class Hand {
 
 		//SORTS THE HAND FROM LEAST TO GREATEST
 		Collections.sort(HandCards, Card.CardRank);
+		Collections.reverseOrder();
 		
 		// CHECKS IF ACE IS IN HAND
 		if (HandCards.get(4).getCvalue() == 14)
@@ -248,7 +249,10 @@ public class Hand {
 		//LOWEST HAND - RETURN THE HIGHEST CARD
 		else
 			{
-				
+				HiHand = HandCards.get(4).getCvalue();
+				LoHand = 0;		
+				Kicker = 0;
+				ScoreHand(1,HiHand, LoHand, Kicker);
 			}
 		
 		
@@ -274,6 +278,37 @@ public class Hand {
 		this.HiHand = HiHand;
 		this.LoHand = LoHand;
 		this.Kicker = Kicker;		
+	}
+	
+	public void printHand()
+	{
+		for(int i = 0; i < 5;i++)
+		{
+			if(HandCards.get(i).getCvalue() == 14)
+			{
+				System.out.print("Ace ");
+			}
+			
+			else if(HandCards.get(i).getCvalue() == 13)
+			{
+				System.out.print("King ");
+
+			}
+			
+			else if(HandCards.get(i).getCvalue() == 12)
+			{
+				System.out.print("Queen ");
+
+			}
+			
+			else if(HandCards.get(i).getCvalue() == 11)
+			{
+				System.out.print("Jack ");
+
+			}
+			else System.out.print(HandCards.get(i).getCvalue() + " ");
+		}
+		System.out.println();
 	}
 }
 

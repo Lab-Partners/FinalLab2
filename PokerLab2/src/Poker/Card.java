@@ -16,13 +16,17 @@ public class Card {
 		this.suit = suit;
 	}
 
-	public int getSuit() {
+	public int getSuit() 
+	{
 		return suit;
 	}
 
-	public int getCvalue() {
+	public int getCvalue() 
+	{
 		return cvalue;
 	}
+	
+	
 
 	public static Comparator<Card> CardRank = new Comparator<Card>() {
 
@@ -33,6 +37,7 @@ public class Card {
 
 		   /*For descending order*/
 		   return Cno2 - Cno1;
+		   
 
 	   }};
 	    

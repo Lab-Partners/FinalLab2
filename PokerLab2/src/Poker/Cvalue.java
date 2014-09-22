@@ -13,5 +13,6 @@ public enum Cvalue {
 	public int getCvalue(){
 		return Cvalue;
 	}
+	
 
 }
